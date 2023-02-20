@@ -2,25 +2,6 @@ function getRndInteger(min = 0, max = 256) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
 
-function randomEventListeners(){
-    let allDivs = document.querySelectorAll(".miniBox");
-    for (let i = 0; i<allDivs.length; i++){
-        allDivs[i].onmouseenter = ()=>{
-            allDivs[i].style.backgroundColor = `rgb(${getRndInteger()},${getRndInteger()},${getRndInteger()})`;
-        }
-    }
-}
-
-function blackEventListeners(){
-    let allDivs = document.querySelectorAll(".miniBox");
-    for (let i = 0; i<allDivs.length; i++){
-        allDivs[i].removeEventListener('mouseover');
-        allDivs[i].addEventListener('mouseover', (div)=>{
-            allDivs[i].style.backgroundColor = `black`;
-        })
-    }
-}
-
 function setGridSize(promptEnter=16){
     bigBox.innerHTML = '';
     for(let i = 0; i<promptEnter; i++){
@@ -35,6 +16,13 @@ function setGridSize(promptEnter=16){
         }
         bigBox.appendChild(divs);
     }
+    let allDivs = document.querySelectorAll(".miniBox");
+    for (let i = 0; i<allDivs.length; i++){
+        allDivs[i].onmouseenter = ()=>{
+            allDivs[i].style.backgroundColor = `black`;
+        }
+    }
+
 }
 
 setGridSize();
@@ -63,6 +51,16 @@ buttonBw.addEventListener('click', ()=>{
     for (let i = 0; i<allDivs.length; i++){
         allDivs[i].onmouseenter = ()=>{
             allDivs[i].style.backgroundColor = `black`;
+        }
+    }
+})
+
+let buttonRandom = document.querySelector('#randomMode');
+buttonRandom.addEventListener('click', ()=>{
+    let allDivs = document.querySelectorAll(".miniBox");
+    for (let i = 0; i<allDivs.length; i++){
+        allDivs[i].onmouseenter = ()=>{
+            allDivs[i].style.backgroundColor = `rgb(${getRndInteger()},${getRndInteger()},${getRndInteger()})`;
         }
     }
 })
