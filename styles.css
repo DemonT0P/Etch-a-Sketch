@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.miniBox{
+    outline: 1q solid black;
+}
+
+.color{
+    background-color: black;
+}
+
+#bigBox{
+    width: 960px;
+    display: flex;
+}
+
+#buttons{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
