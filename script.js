@@ -22,7 +22,6 @@ function setGridSize(promptEnter=16){
             allDivs[i].style.backgroundColor = `black`;
         }
     }
-
 }
 
 setGridSize();
@@ -65,4 +64,13 @@ buttonRandom.addEventListener('click', ()=>{
     }
 })
 
+let buttonColor = document.querySelector('#color');
+buttonColor = addEventListener('change', (e)=>{
+    let allDivs = document.querySelectorAll(".miniBox");
+    for (let i = 0; i<allDivs.length; i++){
+        allDivs[i].onmouseenter = ()=>{
+            allDivs[i].style.backgroundColor = e.target.value;
+        }
+    }
+})
 
